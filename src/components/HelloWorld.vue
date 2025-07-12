@@ -1,4 +1,12 @@
 <script setup lang="ts">
+
+import { ref, computed } from "vue";
+
+const name = ref("")
+
+const greetingUser = computed(() => {
+  return name.value
+})
 defineProps<{
   msg: string
 }>()
@@ -6,10 +14,10 @@ defineProps<{
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+    <input type="text" v-model="name">
+    <h1 class="green">{{ msg }} {{ greetingUser }} </h1>
     <h3>
-      You’ve successfully created a project with
-      <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
+      This is my shopping list! created in
       <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
     </h3>
   </div>
@@ -33,6 +41,7 @@ h3 {
 }
 
 @media (min-width: 1024px) {
+
   .greetings h1,
   .greetings h3 {
     text-align: left;
