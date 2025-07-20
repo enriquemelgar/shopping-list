@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import Store from './Store.vue';
 
 const products = ref(["Empty so far", "This is not empty anymore"]);
 </script>
@@ -8,4 +9,5 @@ const products = ref(["Empty so far", "This is not empty anymore"]);
   <li v-for="product in products">
     {{ product }}
   </li>
+  <Store />
 </template>

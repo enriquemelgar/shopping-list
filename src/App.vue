@@ -1,24 +1,14 @@
-<script setup lang="ts">
-import Store from './components/Store.vue'
-import CalculateShopList from './components/CalculateShopList.vue';
-
-function goToShopList() {
-  alert("We're going to navegate by the way")
-}
-</script>
-
 <template>
   <header>
     <link href="/src/assets/main.css" rel="stylesheet" />
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="./assets/shopping_cart.png" width="125" height="125" />
   </header>
-
+  <nav>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/shopList">Shop-list</RouterLink>
+  </nav>
   <main>
-    <h1 class="text-3xl font-bold underline">Welcome to your shop list!</h1>
-    <CalculateShopList />
-    <button @click="goToShopList">Calculate your shop list</button>
-    <button>Show latest receipt</button>
-    <Store />
+    <RouterView />
   </main>
 </template>
 
@@ -29,7 +19,7 @@ header {
 }
 
 .logo {
-  display: block;
+  display: grid;
   margin: 0 auto 2rem;
 }
 
